@@ -18,12 +18,12 @@
     --bg-second-color: rgb(73, 73, 73);
     --big-font: 3.5rem;
     --h2-font: 2.5rem;
+    --h3-font: 2rem;
     --p-font: 1.25rem;
 }
 
 body {
     background: var(--bg-color);
-    color: var(--text-color);
 }
 
 
@@ -70,16 +70,20 @@ header {
     align-items: center;
     justify-content: end;
     text-align: center;
-    height: 100%;
+    
+    
 }
 
 .login-btn button {
-    padding: 10px 70px;
+    padding: 10px 40px;
     border: 2px solid rgb(0, 153, 255);
     color: rgb(0, 153, 255);
     border-radius: 5px;
     cursor: pointer;
-    font-size: var(--p-font)
+    font-size: var(--p-font);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-btn button:hover {
@@ -117,6 +121,7 @@ header {
     justify-content: center;
     padding: 20px 10%;
     margin-bottom: 100px;
+    
 }
 
 .hero1 {
@@ -210,7 +215,21 @@ h1:hover {
 .hero2 {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
+
+.hero3 {
+    display: none;
+}
+
+.hero4 {
+    display: none;
+}
+
+.btn-small {
+    display: none;
+}
+
 
 .triangle1 {
     width: 0px;
@@ -353,6 +372,8 @@ h1:hover {
     width: 100vw;
     height: 100vh;
     margin-bottom: 20%;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -366,6 +387,9 @@ h1:hover {
     justify-content: center;
     padding: 90px 10% 190px 10%;
     gap: 60px;
+}
+.about-img-small {
+    display: none;
 }
 
 .about-img {
@@ -423,7 +447,11 @@ h1:hover {
     font-size: var(--p-font);
     color: var(--text-color);
     margin-bottom: 50px;
-}  
+}
+
+.btn-small {
+    display: none;
+}
 
 /* Our-doctor Section */
 
@@ -898,6 +926,10 @@ h1:hover {
 
 }
 
+.btn-small {
+    display: none;
+}
+
 input[type="email"] {
     font-family: 'Poppins', sans-serif;
     color: var(--white-text-color);
@@ -918,13 +950,18 @@ input[type="email"]::placeholder {
 
 /* Media query for small device */
 
-/* Extra small devices (phones, 600px and down) */
- /* @media only screen and (max-width: 600px) {
-    .nav-bar {
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+     .nav-bar {
         display: flex;
         width: 100vw;
         align-items: center;
+        position: fixed;
+        background-color: rgba(0, 153, 255, .3);
+        z-index: 200;
+    
     }
+
     .logo {
         width: 80px;
         align-items: center;
@@ -943,84 +980,531 @@ input[type="email"]::placeholder {
         display: flex;
         width: 20px;
         height: 20px;
+    } 
+
+    .menu img {
+        width: 20px;
+        align-items: center;
+    }
+    
+
+    .menu a {
+        text-decoration: none;
+
     }
 
 /* Hero section */
 
-
-/* .hero-section {
+.hero-section {
     display: flex;
     flex-direction: column;
-    width: 100%;
     align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-.fill-01 {
+
+  .hero1 {
     display: none;
-}
+  }
 
-.triangle {
+  .hero2 {
     display: none;
-}
+  }
 
-.hero1,
-.hero2 {
-    width: 100%;
-    margin-bottom: 0px;
-}
+  .hero3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-black);
+    
+  }
 
-.hero1 h1 {
-    font-size: var(--h2-font);
-    margin-bottom: 20px;
-    z-index: 101;
-    margin-top: 90px;
-}
+  .fill-sma {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    z-index: -100;
+    background-color: rgba(0, 153, 255, .1);
+    overflow-x: hidden;
 
+  }
 
-.hero1 p {
-    font-size: 1.2rem;
+  .hero3 h1 {
+    font-size: var(--big-font);
     text-wrap: wrap;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 200px;
+  }
+
+  .hero3 p {
     color: var(--text-color);
-    margin-bottom: 16px;
-    z-index: 101;
+    text-wrap: wrap;
+    padding-bottom: 20px;
+
+  }
+
+
+  .btn-small {
+    display: block;
+    width: 80%;
+    height: 34px;
+    color: var(--white-text-color);
+    background-color: rgb(0, 153, 255);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn:hover {
+    border: 2px solid rgb(0, 153, 255);
+    color: rgb(0, 153, 255);
+    cursor: pointer;
+    background-color: transparent;
+    transform: scale(1.05);
+}
+
+.hero4 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fill-small {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 350px;
+    border-radius: 50%;
+    z-index: -100;
+    background-color: rgb(0, 153, 255);
+    overflow-x: hidden;
+
+}
+
+.hero4 img {
+    width: 300px;
+    padding: 50px 0px;
+}
+
+/* Service-section */
+
+.service-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.service-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.service-text p {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.service-text h2 {
+  font-size: var(--h2-font);
+  margin: 0px 20% 30px 20%;
+}
+
+.service-wrapper {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.wrapper {
+    margin-bottom: 50px;
+}
+
+/* Section-About */
+
+.about {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+
+}
+
+.about-img {
+    display: none;
+
+}
+
+.about-img-small {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 220px;
+
+}
+
+.about-img-small img {
+    width: 300px;
+    padding: 50px 0px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 50px;
+
+}
+
+.about-text {
+    align-items: center;
+    justify-content: center;
+
+}
+
+.about-text p,
+.about-text h2 {
+    text-align: center;
+}
+
+.about-text p:last-of-type{
+    text-align: center;
 }
 
 .btn {
-    width: 180px;
-    height: 34px;;
-    border-radius: 5px;
-    z-index: 101;
+    display: none;
 }
 
-.fill-02 {
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50% -50%);
+/* Doctor-section */
+
+.doctor-image {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
-    z-index: 101;
-    background-color: rgb(0, 153, 255);
+}
+
+.meet-doctor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.doc-profile {
+    margin-bottom: 200px;
+}
+
+/* Testimony-Section */
+
+.testimony,
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.testimonial-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimony-container {
+    margin-bottom: 80px;
+}
+
+.testimony-card{
+    width: 100%;
+    height: 100%;
+}
+
+.black-container,
+.black-container-wrapper,
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-us p {
+    padding-bottom: 30px;
+}
+
+.footer,
+.footer-info,
+.footer-left,
+.footer-left-wrapper,
+.footer-main,
+.footer-main-wrapper,
+.footer-right,
+.footer-right-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-left-wrapper p {
+    text-align: center;
+}
+
+.footer-right-wrapper input {
+    width: 80%;
+    margin-top: 20px;
+}
+
+.footer-main-wrapper {
+    margin-top: 20px;
+}
+
 
 }
 
-.hero2 img {
-    position: relative;
-    left: 30%;
-    top: 40%;
-    transform: translateX(-50%);
-    display: block;
-    width: 240px;
-    max-width: 100%; 
-    height: auto; 
-    align-items: center;
-    justify-content: center;
-    z-index: 102;
+/* Medium devices (phones, 992px and down) */
+@media only screen and (max-width: 992px) {
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 90px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
     
-} 
+    
+      .hero1 {
+        display: none;
+      }
+    
+      .hero2 {
+        display: none;
+      }
+    
+      .hero3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--text-black);
+        padding-top: 50px;
+      }
+
+      .hero3 h1 {
+        font-size: var(--big-font);
+        padding-top: 200px;
+        padding-bottom: 20px;
+      }
+
+      .hero3 p {
+        padding-bottom: 20px;
+        color: var(--second-text-color);
+      }
+
+      .btn-small {
+        display: block;
+        width: 80%;
+        height: 34px;
+        color: var(--white-text-color);
+        background-color: rgb(0, 153, 255);
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .fill-sma {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transform: translateX(-50%);
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        z-index: -100;
+        background-color: rgba(0, 153, 255, .1);
+        overflow-x: hidden;
+    
+      }
+    
+     
+    
+    .hero4 {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .fill-small {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        z-index: -100;
+        background-color: rgb(0, 153, 255);
+        overflow-x: hidden;
+    
+    }
+    
+    .hero4 img {
+        width: 200px;
+        padding: 50px 0px;
+    }
+
+    /* Our-Service Section */
+
+    .wrapper.one {
+        border-right: 2px solid rgba(128, 128, 128, .3);
+    }
+
+    .wrapper.three {
+        border-left: 2px solid rgba(128, 128, 128, .3);
+    }
+
+    }
+
+
+    /* About Section */
+
+    .about {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+    
+    }
+    
+    .about-img {
+        display: none;
+    
+    }
+    
+    .about-img-small {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 220px;
+    
+    }
+    
+    .about-img-small img {
+        width: 300px;
+        padding: 50px 0px;
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 50px;
+    
+    }
+    
+    .about-text {
+        align-items: center;
+        justify-content: center;
+    
+    }
+    
+    .about-text p,
+    .about-text h2 {
+        text-align: center;
+    }
+    
+    .about-text p:last-of-type{
+        text-align: center;
+    }
+    
+    .btn {
+        display: none;
+    }
+
+    /* Doctor-section */
+
+.doctor-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.meet-doctor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.doc-profile {
+    margin-bottom: 200px;
+}
+
+/* Testimony-Section */
+
+.testimony,
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.testimonial-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimony-container {
+    margin-bottom: 80px;
+}
+
+.testimony-card{
+    width: 100%;
+    height: 100%;
+}
+        
+        
+
 
 }
- */ */
