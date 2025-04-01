@@ -1328,7 +1328,7 @@ input[type="email"]::placeholder {
 
       .hero3 h1 {
         font-size: var(--big-font);
-        padding-top: 200px;
+        padding-top: 80px;
         padding-bottom: 20px;
       }
 
