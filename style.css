@@ -1301,7 +1301,7 @@ input[type="email"]::placeholder {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding-top: 90px;
+        padding-top: 10px;
         padding-bottom: 10px;
         box-sizing: border-box;
         overflow-x: hidden;
@@ -1323,12 +1323,12 @@ input[type="email"]::placeholder {
         justify-content: center;
         text-align: center;
         color: var(--text-black);
-        padding-top: 50px;
+        padding-top: 10px;
       }
 
       .hero3 h1 {
         font-size: var(--big-font);
-        padding-top: 80px;
+        padding-top: 10px;
         padding-bottom: 20px;
       }
 
